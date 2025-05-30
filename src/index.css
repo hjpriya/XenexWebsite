@@ -19,15 +19,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Main App Container */
 .App {
   width: 100%;
   margin: auto;
   padding: 0 15px;
 }
 
+.web-body{
+  padding-top: 85px; /* Account for 80px header height + 1px border */
+}
+
 /*------------------Header Start-------------------------*/
-header {
+.web-header {
   width: 100%;
   min-height: 80px;
   display: flex;
@@ -35,14 +38,15 @@ header {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 15px;
-  border-bottom: 1px solid #ccc;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  position: relative; 
+  position: fixed;
+  top: 0;
+  z-index: 100; 
+  left: 0;
   background: #fff;
   transition: all 0.5s ease-in-out;
   animation: slide-down 0.7s; 
   opacity: 1;
+  border-bottom: 1px solid #ccc; 
 }
 
 .header-web-logo img {
@@ -58,14 +62,14 @@ header {
   flex-grow: 1; 
 }
 
-.menu-title ul {
+.nav-menu ul {
   list-style: none; 
   padding: 0;
   margin: 0;
   display: flex; 
 }
 
-.menu-title ul a {
+.nav-menu a {
   padding: 0 15px;
   text-transform: initial;
   color: #000 !important; 
@@ -243,18 +247,17 @@ header {
 /*------SlideShow Start -------------*/
 .slideshow-container {
   position: relative;
-  width: 100%;
-  max-width: 900px; /* Adjust as needed */
+  width: 100%;  
   margin: 0 auto;
-  overflow: hidden; /* Crucial to hide slides outside the current view */
-  border-radius: 8px; /* Optional: rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+  overflow: hidden; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .slideshow-slider {
-  display: flex; /* Arranges slides horizontally */
-  transition: transform 0.8s ease-in-out; /* Smooth transition for slide changes */
-  height: 450px; /* Set a fixed height for your slides */
+  display: flex; 
+  transition: transform 0.8s ease-in-out;
+  height: 450px;
 }
 
 .slide {

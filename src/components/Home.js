@@ -14,7 +14,6 @@ export default function Home({ autoPlay = true, interval = 6000 }) {
     },   
   ];
 
-  // Move all state and logic directly into the Home component
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -26,7 +25,7 @@ export default function Home({ autoPlay = true, interval = 6000 }) {
 
   useEffect(() => {
     resetTimeout();
-    if (autoPlay) { // Only set timeout if autoPlay is true
+    if (autoPlay) { 
       timeoutRef.current = setTimeout(
         () =>
           setCurrentIndex((prevIndex) =>
@@ -39,7 +38,7 @@ export default function Home({ autoPlay = true, interval = 6000 }) {
     return () => {
       resetTimeout();
     };
-  }, [currentIndex, autoPlay, interval, slidesData.length]); // Added slidesData.length to dependencies
+  }, [currentIndex, autoPlay, interval, slidesData.length]); 
 
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -63,7 +62,6 @@ export default function Home({ autoPlay = true, interval = 6000 }) {
         <div className="slideshow-container">
           <div
             className="slideshow-slider"
-            // Use currentIndex directly, not slide.currentIndex
             style={{ transform: `translateX(${-currentIndex * 100}%)` }}
           >
             {slidesData.map((slide, index) => (
@@ -71,24 +69,17 @@ export default function Home({ autoPlay = true, interval = 6000 }) {
                 className="slide"
                 key={slide.id}
                 style={{ backgroundImage: `url(${slide.image})` }}
-              >
-                <div className="slide-content">
-                  <h2>{slide.caption}</h2>
-                  {/* Add more content here if needed */}
-                </div>
+              >               
               </div>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
-          <button className="prev-button" onClick={goToPrevSlide}> {/* Use goToPrevSlide directly */}
+          <button className="prev-button" onClick={goToPrevSlide}> 
             &#10094;
           </button>
-          <button className="next-button" onClick={goToNextSlide}> {/* Use goToNextSlide directly */}
+          <button className="next-button" onClick={goToNextSlide}> 
             &#10095;
           </button>
-
-          {/* Dot Indicators */}
+          
           <div className="slideshow-dots">
             {slidesData.map((_, index) => (
               <div
@@ -99,9 +90,9 @@ export default function Home({ autoPlay = true, interval = 6000 }) {
             ))}
           </div>
         </div>
-        <section className="homepage-content">
+        <div className="homepage-content">
           <p style={{textAlign:'center', margin:'revert'}}>Xenex Overseas</p>
-        </section>
+        </div>
       </main>
     </div>
   );

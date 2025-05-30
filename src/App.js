@@ -16,7 +16,7 @@ function App() {
       <div className="App">
           <Router>
           <Header /> 
-          <section>            
+          <section className="web-body">            
             <Routes>              
             <Route path="/" element={<Home />} /> 
             <Route path="about" element={<About />} />
@@ -24,8 +24,8 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="career" element={<Career />} />
             <Route path="product" element={<Product />} />
-             <Route path="brassHardware/brassBottle" element={<BrassBottle />} />
-              <Route path="brassPipeFitting" element={<BrassPipeFitting />} />
+            <Route path="brassHardware/brassBottle" element={<BrassBottle />} />
+            <Route path="brassPipeFitting" element={<BrassPipeFitting />} />
             <Route path="quality" element={<Quality />} />
             </Routes>  
           </section>               

@@ -30,11 +30,11 @@ export default function Footer() {
                         <h3>Contact</h3>
                         <div>
                             <div className="address">
-                                <p> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <p> <i className="fa fa-map-marker" aria-hidden="true"></i>
                                     &nbsp; RS no-24/1, Shivam Park, plot no 19/2, near GIDC phase-3, GIDC Phase-2, Dared, Jamnagar, Gujarat 361005, India </p>
                             </div>
                             <div className="mail">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <i className="fa fa-envelope" aria-hidden="true"></i>
                                 &nbsp; <a href="mailto:darshanxenex@gmail.com">darshanxenex@gmail.com</a>
                             </div>
                             <div className="txt-number">
