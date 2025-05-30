@@ -53,9 +53,7 @@ const Header = () => {
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.logoContainer}>
-                    <li to="/" onClick={closeMobileMenu}>
-                        <img src={logo} alt="Xenex Logo" className={styles.logoImage} />
-                    </li>
+                    <img src={logo} alt="Xenex Logo" className={styles.logoImage} />
                 </div>
 
                 <div className={styles.burgerIcon} onClick={toggleMobileMenu}>

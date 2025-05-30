@@ -12,7 +12,7 @@ export default function Footer() {
                     <div className="col-md-3 col-sm-12 col-xs-12 ft-info">
                         <h3>Quick Link</h3>
                         <ul className="list-unstyled">
-                            <li><a href="/home">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="/about">About Us</a></li>
                             <li><a href="/contact">Contact Us</a></li>
                         </ul>
@@ -20,9 +20,9 @@ export default function Footer() {
                     <div className="col-md-3 col-sm-12 col-xs-12 ft-info">
                         <h3>Our Product</h3>
                         <ul className="list-unstyled">
-                            <li><a href="/">Brass Hardware</a></li>
-                            <li><a href="/">Brass Pipe Fitting</a></li>
-                            <li><a href="/">Brass Auto Component</a></li>                            
+                            <li><a href="/brassHardware">Brass Hardware</a></li>
+                            <li><a href="/brassPipeFitting">Brass Pipe Fitting</a></li>
+                            <li><a href="/brassAutoComponent">Brass Auto Component</a></li>
                         </ul>
                     </div>
                     <div className="col-md-4 col-sm-12 col-xs-12 ft-info">

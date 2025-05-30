@@ -255,3 +255,76 @@ code {
   }
 }
 /*------SlideShow End -------------*/
+
+
+/*----------------Contact Start------------------*/
+.contact-container{
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+}
+
+.contact-form{
+padding: 2rem;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-box{
+     margin-bottom: 1rem;
+}
+
+.contact-description{
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form-label{
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.contact-form-input{    
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    box-sizing: border-box;
+};
+
+.status-message-success {
+   margin-top: 1rem;
+    text-align: center;
+    border: 1px solid green;
+    padding: 0.75rem;
+    border-radius: 4px;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    background-color: #28a745; 
+}
+.status-message-error {
+   margin-top: 1rem;
+    text-align: center;
+    border: 1px solid green;
+    padding: 0.75rem;
+    border-radius: 4px;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    background-color: #dc3545; 
+}
+/*----------------Contact End--------------------*/
