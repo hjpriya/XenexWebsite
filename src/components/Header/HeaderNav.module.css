@@ -20,10 +20,6 @@
     align-items: center;
 }
 
-.logoContainer {
-    /* Flex properties will be inherited if .nav is display:flex */
-}
-
 .logoImage {
     height: 50px; /* Adjust as needed */
     width: auto;

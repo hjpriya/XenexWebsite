@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import NavItem from './NavItem';
 import styles from './HeaderNav.module.css';
 import logo from './../svg/logo.png';
@@ -26,20 +25,20 @@ const Header = () => {
             label: 'Products',
             link: '/products',
             subItems: [ // Ensure these links are unique and defined in App.js
+                { label: 'Brass Hardware', link: '/brassHardware' },
                 { label: 'Brass Pipe Fitting', link: '/brassPipeFitting' }, // Example: updated link
-                { label: 'Brass Auto Component', link: '/product' }, // Example: updated link
-                { label: 'Other Products', link: '/products/other' }, // Example: new distinct link
+                { label: 'Brass Auto Component', link: '/brassAutoComponent' }, // Example: updated link
             ],
         },
-        {
-            label: 'Brass Hardware',
-            link: '/brassHardware',
-            subItems: [
-                { label: 'Brass Bottle', link: '/brassHardware/brassBottle' }, // Existing
-                { label: 'Brass Knobs', link: '/brassHardware/brassKnobs' }, // Example: new distinct link
-                { label: 'Lock & Cylinder', link: '/brassHardware/lockCylinder' }, // Example: new distinct link
-            ],
-        },
+        // {
+        //     label: 'Brass Hardware',
+        //     link: '/brassHardware',
+        //     subItems: [
+        //         { label: 'Brass Bottle', link: '/brassHardware/brassBottle' }, // Existing
+        //         { label: 'Brass Knobs', link: '/brassHardware/brassKnobs' }, // Example: new distinct link
+        //         { label: 'Lock & Cylinder', link: '/brassHardware/lockCylinder' }, // Example: new distinct link
+        //     ],
+        // },
         {
             label: 'About Us',
             link: '/about',
@@ -54,9 +53,9 @@ const Header = () => {
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.logoContainer}>
-                    <Link to="/" onClick={closeMobileMenu}>
+                    <li to="/" onClick={closeMobileMenu}>
                         <img src={logo} alt="Xenex Logo" className={styles.logoImage} />
-                    </Link>
+                    </li>
                 </div>
 
                 <div className={styles.burgerIcon} onClick={toggleMobileMenu}>

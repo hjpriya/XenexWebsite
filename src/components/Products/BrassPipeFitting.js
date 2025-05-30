@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function About() {
+export default function BrassPipeFitting() {
   return (
     <div>
       <h1>Brass Pipe Fitting</h1>      

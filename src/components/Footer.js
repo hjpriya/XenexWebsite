@@ -17,7 +17,6 @@ export default function Footer() {
                             <li><a href="/contact">Contact Us</a></li>
                         </ul>
                     </div>
-                    <br/>
                     <div className="col-md-3 col-sm-12 col-xs-12 ft-info">
                         <h3>Our Product</h3>
                         <ul className="list-unstyled">
