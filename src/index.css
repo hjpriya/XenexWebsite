@@ -1,0 +1,372 @@
+/*---------- Global Resets and Fonts------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #B5A642 !important; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Main App Container */
+.App {
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/*------------------Header Start-------------------------*/
+header {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15px;
+  border-bottom: 1px solid #ccc;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative; 
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+  animation: slide-down 0.7s; 
+  opacity: 1;
+}
+
+.header-web-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1; 
+}
+
+.menu-title ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  display: flex; 
+}
+
+.menu-title ul a {
+  padding: 0 15px;
+  text-transform: initial;
+  color: #000 !important; 
+  letter-spacing: 2px;
+  transition: color 0.3s ease; 
+}
+
+.menu {
+  display: none; 
+}
+
+/*-------Responsive Header-----------*/
+@media (max-width: 700px) {
+  header {
+    justify-content: space-between;
+    padding: 0 20px; 
+  }
+
+  .menu-title {
+    flex-grow: 0; 
+  }
+
+  .menu-title ul {
+    margin-top: 0; 
+    position: absolute; /* Positioned relative to the header */
+    top: 100%; /* Start directly below the header */
+    left: 0; /* Align to the left of the header */
+    width: 100%; /* Span the full width of the header */
+    height: auto; /* Adjust height based on content, for dropdown behavior */
+    max-height: calc(100vh - 80px); /* Optional: prevent menu from being taller than viewport minus header height */
+    overflow-y: auto; /* Add scroll if content exceeds max-height */
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    opacity: 1; 
+    z-index: 99; 
+    transform: translateX(-100%); /* Initially off-screen to the left */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in transition */
+    padding-top: 20px; /* Add some padding at the top of the menu */
+    padding-bottom: 20px; /* Add some padding at the bottom */
+  }
+
+  /* When the menu is active/open (controlled by JS, e.g., a 'menu-open' class) */
+  .menu-title ul.open {
+    transform: translateX(0); /* Slide in to view */
+  }
+
+  .menu-title ul a {
+    margin: 15px 0; /* Spacing between mobile menu items */
+    font-size: 1.2rem; /* Adjust font size for mobile */
+    padding: 10px 20px; /* Add padding for better touch targets */
+    width: 100%; /* Make links take full width */
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .menu {
+    display: block; /* Show burger icon on smaller screens */
+  }
+
+  /* Styles for the close icon item and the icon itself */
+  .menu-title ul.open .close-menu-item {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 0; /* Reset padding if any from general li > a rules */
+    margin: 0; /* Reset margin */
+  }
+  .menu-title ul.open .close-menu-icon {
+    cursor: pointer;
+    display: block; /* Ensure it's block for positioning */
+  }
+}
+
+/*------------------Header End-------------------------*/
+
+/*------------------Footer Start-------------------------*/
+.footer {
+  background: #000;
+  padding: 52px 0px 0px;
+  color: #fff;
+}
+
+.footer .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px; /* Example max-width for content */
+}
+
+.footer h3 {
+  color: #B5A642;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 1em;
+  border-left: 2px solid #B5A642;
+  padding-left: 20px;
+}
+
+.footer .row { /* Using .row instead of .container .row for clarity */
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px; /* Counteract column padding */
+  margin-left: -15px; /* Counteract column padding */
+}
+
+.footer a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #B5A642; /* Hover color for footer links */
+}
+
+.footer .copyright {
+  color: #000;
+  text-align: center;
+  background: #fff;
+  padding: 8px;
+  margin-top: 30px;
+}
+
+.footer .copyright a {
+  color: #000; /* Ensure copyright links are black */
+  transition: color 0.3s ease;
+}
+
+.footer .copyright a:hover {
+  color: #B5A642; /* Hover color for copyright links */
+}
+
+.footer-links a {
+  margin: 0 10px; /* Spacing between social/utility links */
+}
+
+.ft-info {
+  margin-bottom: 2em; /* Spacing for footer information blocks */
+}
+
+.footer-logo img {
+  background-color: white; /* If your logo has a background */
+  max-width: 100px; /* Adjust logo size in footer */
+  height: auto;
+  display: block; /* Remove extra space */
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .container {
+    padding: 0 20px;
+  }
+  .footer h3 {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0.5em;
+  }
+  .ft-info {
+    margin-bottom: 1.5em;
+  }
+}
+/*------------------Footer End---------------------------*/
+
+
+
+
+/*------SlideShow Start -------------*/
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* Adjust as needed */
+  margin: 0 auto;
+  overflow: hidden; /* Crucial to hide slides outside the current view */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
+
+.slideshow-slider {
+  display: flex; /* Arranges slides horizontally */
+  transition: transform 0.8s ease-in-out; /* Smooth transition for slide changes */
+  height: 450px; /* Set a fixed height for your slides */
+}
+
+.slide {
+  flex-shrink: 0; /* Prevents slides from shrinking */
+  width: 100%; /* Each slide takes 100% of the container width */
+  height: 100%; /* Each slide takes 100% of the container height */
+  background-size: cover; /* Images cover the entire slide area */
+  background-position: center; /* Centers the image */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  color: white; /* Text color for captions */
+  text-align: center;
+  position: relative; /* For overlay content */
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text readability */
+  z-index: 1;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+  padding: 20px;
+}
+
+.slide-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation Buttons */
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 18px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  z-index: 10; /* Ensure buttons are above slides */
+  transition: background-color 0.3s ease;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+  left: 15px;
+}
+
+.next-button {
+  right: 15px;
+}
+
+/* Dot Indicators */
+.slideshow-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.slideshow-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slideshow-dot.active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prev-button,
+  .next-button {
+    padding: 10px 12px;
+    font-size: 1.2rem;
+  }
+  .slide-content h2 {
+    font-size: 1.5rem;
+  }
+  .slideshow-slider {
+    height: 300px;
+  }
+}
+/*------SlideShow End -------------*/
