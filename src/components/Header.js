@@ -54,12 +54,10 @@ export default function Header() {
                             <li><Link to="/brassHardware/brassBottle" onClick={handleLinkClick}>Brass Auto Component</Link></li>
                         </ul>
                     )}
-                </li>
-                               
+                </li>                               
                 <li><Link to="/about" onClick={handleLinkClick}>About Us</Link></li>
                 <li><Link to="/contact" onClick={handleLinkClick}>Contact Us</Link></li>
-                <li><Link to="/career" onClick={handleLinkClick}>Career</Link></li>  
-                             
+                <li><Link to="/career" onClick={handleLinkClick}>Career</Link></li>                               
             </ul> 
             </div>         
       </header>
