@@ -1,0 +1,115 @@
+.header {
+    width: 100%;
+    min-height: 80px; /* Match your existing header height */
+    padding: 0 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoContainer {
+    /* Flex properties will be inherited if .nav is display:flex */
+}
+
+.logoImage {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    display: block;
+}
+
+.burgerIcon {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.burgerIcon img {
+    width: 25px; /* Adjust size */
+    height: auto;
+    display: block;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Styles for the close icon, initially part of the mobile menu flow */
+.closeIconContainer {
+    display: none; /* Hidden on desktop, shown in mobile menu */
+    width: 100%;
+    text-align: right;
+    padding: 15px 20px 0; /* Padding for positioning */
+    box-sizing: border-box;
+}
+
+.closeIcon {
+    cursor: pointer;
+    display: inline-block; /* To allow text-align to work */
+}
+
+.closeIcon img {
+    width: 25px; /* Adjust size */
+    height: auto;
+    display: block;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .burgerIcon {
+        display: block;
+        z-index: 1002; /* Above navList when closed */
+    }
+
+    .navList {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Start off-screen */
+        width: 80%; /* Or a fixed width like 280px */
+        max-width: 300px;
+        height: 100vh;
+        background-color: #fff;
+        padding-top: 0; /* Reset padding, close icon container will handle it */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        transition: left 0.3s ease-in-out;
+        z-index: 1001; /* Below burger when closed, above content when open */
+        overflow-y: auto; /* For long menus */
+    }
+
+    .navList.open {
+        left: 0; /* Slide in */
+    }
+
+    .closeIconContainer {
+        display: block; /* Show close icon container in mobile menu */
+    }
+
+    /* Adjust NavItem styles if needed within this media query,
+       or preferably within NavItem.module.css */
+    .navList :global(.navItem) { /* Example if NavItem styles need targeting from here */
+        width: 100%;
+        text-align: left;
+    }
+    .navList :global(.navLink) {
+        padding: 15px 20px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

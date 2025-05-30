@@ -1,0 +1,95 @@
+.navItem {
+    position: relative; /* For submenu positioning on desktop */
+    margin: 0 10px; /* Spacing between items on desktop */
+}
+
+.navLink {
+    padding: 15px 10px; /* Padding for desktop links */
+    text-decoration: none;
+    color: #333;
+    display: flex; /* To align text and arrow */
+    align-items: center;
+    justify-content: space-between; /* Pushes arrow to the end on mobile */
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    color: #B5A642; /* Your theme hover color */
+}
+
+.dropdownArrow {
+    margin-left: 8px;
+    font-size: 0.7em;
+    transition: transform 0.2s ease;
+}
+
+.dropdownArrow.open {
+    transform: rotate(180deg);
+}
+
+.subMenu {
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 200px; /* Adjust as needed */
+}
+
+/* Desktop Submenu (absolute positioning) */
+@media (min-width: 769px) { /* Matches the inverse of mobile breakpoint */
+    .subMenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1005; /* Above other header content */
+    }
+    .navItem:hover .subMenu { /* Show on hover for desktop */
+        /* This is handled by JS state now, but you could add CSS hover if preferred for desktop */
+    }
+}
+
+.subMenuItem {
+    /* No specific styles needed unless different from navItem */
+}
+
+.subMenuLink {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.subMenuLink:hover {
+    background-color: #f5f5f5;
+    color: #B5A642;
+}
+
+/* Mobile Submenu (static positioning, full width) */
+@media (max-width: 768px) {
+    .navItem {
+        margin: 0; /* Full width on mobile */
+        border-bottom: 1px solid #f0f0f0; /* Separator for mobile items */
+    }
+    .navItem:last-child {
+        border-bottom: none;
+    }
+    .navLink {
+        padding: 15px 20px; /* Consistent padding for mobile */
+    }
+    .subMenu {
+        position: static; /* Stack below parent on mobile */
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid #e0e0e0; /* Separator for submenu block */
+        background-color: #f9f9f9; /* Slightly different background */
+        padding-left: 15px; /* Indent submenu items on mobile */
+    }
+    .subMenuLink {
+        padding: 12px 20px;
+    }
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-export default function BraaBottle() {
+export default function BrassBottle() {
   return (
     <div>
-      <h1>BraaBottle</h1>
+      <h1>Brass Bottle</h1>
     </div>
      );
 }
