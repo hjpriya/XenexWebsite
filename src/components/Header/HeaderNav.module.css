@@ -45,24 +45,47 @@
     align-items: center;
 }
 
-/* Styles for the close icon, initially part of the mobile menu flow */
 .closeIconContainer {
-    display: none; /* Hidden on desktop, shown in mobile menu */
+    display: none; 
     width: 100%;
     text-align: right;
-    padding: 15px 20px 0; /* Padding for positioning */
+    padding: 15px 20px 0; 
     box-sizing: border-box;
 }
 
 .closeIcon {
     cursor: pointer;
-    display: inline-block; /* To allow text-align to work */
+    display: inline-block; 
 }
 
 .closeIcon img {
-    width: 25px; /* Adjust size */
+    width: 25px; 
     height: auto;
     display: block;
+}
+
+
+.translateWidgetContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+.googleTranslateElement select {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.goog-logo-link, .goog-te-gadget-icon {
+    display: none !important;
+}
+.goog-te-banner-frame {
+    display: none !important;
 }
 
 /* Mobile Styles */
@@ -107,5 +130,12 @@
         display: block;
         width: 100%;
         box-sizing: border-box;
+    }
+
+     .translateWidgetContainer { 
+        right: 3px;
+        position: absolute;
+        z-index: 999;
+        top:-4px
     }
 }

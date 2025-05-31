@@ -49,10 +49,8 @@ export default function Contact() {
                 method: "POST",
                 body: dataToSubmit,
             });
-
             const responseText = await response.text();
             console.log("Raw response text from Apps Script:", responseText);
-
             let result;
             try {
                 result = JSON.parse(responseText);
@@ -60,12 +58,14 @@ export default function Contact() {
                 console.error("Failed to parse JSON response from Apps Script:", parseError);
                 throw new Error(`Received a non-JSON response from the server (HTTP ${response.status}). Check server logs and ensure the script returns JSON.`);
             }
-
             console.log("Parsed Apps Script Response:", result);
 
             if (response.ok && result.status === "success") {
-                setSubmitStatus({ type: 'success', message: result.message || "Message sent successfully! We'll get back to you soon." });
+                const successMessage = result.message || "Message sent successfully! We'll get back to you soon.";
+                setSubmitStatus({ type: 'success', message: successMessage });
                 setFormData({ name: "", email: "", contact: "", message: "" });
+                alert(successMessage);
+            
             } else {
                 let detailedErrorMessage = "Submission failed.";
                 if (!response.ok) {
@@ -118,11 +118,8 @@ export default function Contact() {
                     {isSubmitting ? "Submitting..." : "Send Message"}
                 </button>
             </form>
-            {submitStatus && submitStatus.type === "success" && (
-                <p className="status-message status-message-success">{submitStatus.message}</p>
-            )}
             {submitStatus && submitStatus.type === "error" && (
-                <p className="status-message status-message-error">{submitStatus.message}</p>
+                alert("Sorry, Somthing Went Wrong!")
             )}
         </div>
     );
