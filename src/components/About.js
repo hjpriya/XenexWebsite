@@ -28,7 +28,12 @@ export default function About() {
 
         <div className="row">
           <div className="col-md-6 mb-4">
-            <div className="about-us-card">
+             <div className="about-us-image">
+              <img src={Vision} alt=" Xenex Overseas" className="img-fluid rounded shadow-sm about-us-image" />
+            </div>            
+          </div>
+          <div className="col-md-6 mb-4">
+           <div className="about-us-card">
               <h3 className="about-us-subheading">Our Vision</h3>
               <p className="about-us-text">
                 To be a global leader in the brass component industry, recognized for our superior products,
@@ -37,21 +42,11 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="col-md-6 mb-4">
-            <div className="about-us-image">
-              <img src={Vision} alt=" Xenex Overseas" className="img-fluid rounded shadow-sm about-us-image" />
-            </div>
-          </div>
         </div>
 
         <div className="row">
           <div className="col-md-6 mb-4">
-            <div className="about-us-image">
-              <img src={Mission} alt="Xenex Overseas" className="img-fluid rounded shadow-sm about-us-image" />
-            </div>
-          </div>
-          <div className="col-md-6 mb-4">
-            <div className="about-us-card">
+           <div className="about-us-card">
               <h3 className="about-us-subheading">Our Mission</h3>
               <p className="about-us-text">
                 To deliver innovative and reliable brass solutions that exceed customer expectations,
@@ -60,6 +55,11 @@ export default function About() {
               </p>
             </div>
           </div>
+          <div className="col-md-6 mb-4">
+            <div className="about-us-image">
+              <img src={Mission} alt="Xenex Overseas" className="img-fluid rounded shadow-sm about-us-image" />
+            </div>
+          </div>           
         </div>
 
         <div className="row">
